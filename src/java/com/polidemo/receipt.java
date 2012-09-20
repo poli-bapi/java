@@ -69,7 +69,7 @@ public class receipt extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-            out.print("<tr><td>CurrencyCode</td><td>" + r.getCurrencyCode() + "</td></tr>");
+            out.print("<table><tr><td>CurrencyCode</td><td>" + r.getCurrencyCode() + "</td></tr>");
             out.print("<tr><td>ErrorCode</td><td>" + r.getErrorCode() + "</td></tr>");
             out.print("<tr><td>FinancialInstitutionCode</td><td>" + r.getFinancialInstitutionCode() + "</td></tr>");
             out.print("<tr><td>FinancialInstitutionName</td><td>" + r.getFinancialInstitutionName() + "</td></tr>");
@@ -93,7 +93,7 @@ public class receipt extends HttpServlet {
             out.print("<tr><td>MerchantDefinedData</td><td>" + r.getMerchantDefinedData() + "</td></tr>");
             out.print("<tr><td>MerchantEstablishedDateTime</td><td>" + r.getMerchantEstablishedDateTime() + "</td></tr>");
             out.print("<tr><td>PaymentAmount</td><td>" + r.getPaymentAmount() + "</td></tr>");
-            out.print("<tr><td>StartDateTime</td><td>" + r.getStartDateTime() + "</td></tr>");
+            out.print("<tr><td>StartDateTime</td><td>" + r.getStartDateTime() + "</td></tr></table>");
 
             /*
              * clear session

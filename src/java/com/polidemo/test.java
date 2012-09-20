@@ -13,6 +13,8 @@ import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,6 +58,20 @@ public class test extends HttpServlet {
 
 response.setContentType("text/plain");            
 
+            String urlm = request.getScheme() + "://" + request.getServerName();
+            if (request.getServerPort() != 80) {
+                urlm += ":" + request.getServerPort();
+            }
+            urlm += request.getContextPath() + "/";
+            out.println(urlm);
+  String s= new SimpleDateFormat("d MMMM yyyy hh:mm:ss").format(new Date());
+            out.println(s);
+Date d=new SimpleDateFormat("d MMMM yyyy hh:mm:ss").parse("2 September 2012 11:17:03");            
+out.println(d.toString());       
+/*
+ * 
+ * 
+ * 
             out.println("<h1>Servlet test at " + request.getServerName()+ "- "+   request.getServerPort()+" "+request.getContextPath()+request.getScheme());  
 Method [] mt=            DetailedTransaction.class.getMethods();
             
@@ -63,7 +79,7 @@ Method [] mt=            DetailedTransaction.class.getMethods();
           if(m.getName().startsWith("get"))
           out.println("out.println(\"<tr><th>"+m.getName().replace("get", "")+"</th><td>\");out.println(dt."+m.getName()+"());"+"out.println(\"</td></tr>\");") ;
           
-      }      
+      }      */
             
             
             out.println("</body>");

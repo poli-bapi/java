@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 import java.rmi.RemoteException;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +55,7 @@ public class NotifyServlet extends HttpServlet {
              * TODO output your page here. You may use following sample code.
              */
 
-            if (request.getParameter("Token") != null) {
+            if (request.getParameter("Token") == null) {
                 out.print("invalid");
                 out.close();
                 return;
@@ -153,7 +154,8 @@ public class NotifyServlet extends HttpServlet {
             Receipts rt = new Receipts(transaction1.getTransactionID());
             rt.setAmountPaid(transaction1.getAmountPaid().floatValue());
             rt.setBankReceipt(transaction1.getBankReceipt());
-            Date dt = DateFormat.getDateInstance().parse(transaction1.getBankReceiptDateTime());
+           
+            Date dt = new SimpleDateFormat("d MMMM yyyy hh:mm:ss").parse(transaction1.getBankReceiptDateTime());
             rt.setBankReceiptDateTime(dt);
             rt.setCountryCode(transaction1.getCountryCode());
             rt.setCountryName(transaction1.getCountryName());

@@ -148,8 +148,8 @@ public class initiatetransaction extends HttpServlet {
                 out.close();
 
             }
-
-            if (initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransactionStatusCode().equalsIgnoreCase("initiated")) {
+//FinancialInstitutionSelected
+            if (initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransactionStatusCode().equalsIgnoreCase("initiated")||initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransactionStatusCode().equalsIgnoreCase("FinancialInstitutionSelected")) {
                 String url = initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransaction().getNavigateURL();
                 String token = initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransaction().getTransactionToken();
                 String tref = initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransaction().getTransactionRefNo();
@@ -174,7 +174,7 @@ public class initiatetransaction extends HttpServlet {
                 response.sendRedirect(url);
 
             } else {
-                out.print("invalid code");
+                out.print("invalid code"+initiateTransaction.getInitiateTransactionResponse().getInitiateTransactionResult().getTransactionStatusCode());
             }
 
 

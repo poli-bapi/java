@@ -38,7 +38,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <form name="CheckoutForm" method="post" action="soap/initiatetransaction.php" id="CheckoutForm">
+        <form name="CheckoutForm" method="post" action="initiatetransaction" id="CheckoutForm">
 
         <fieldset class="input">
             <legend>Test Input</legend>
