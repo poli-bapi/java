@@ -29,10 +29,6 @@
         <servlet-class>com.polidemo.initiatetransaction</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>test</servlet-name>
-        <servlet-class>com.polidemo.test</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>notify</servlet-name>
         <servlet-class>com.polidemo.NotifyServlet</servlet-class>
     </servlet>
@@ -51,10 +47,6 @@
     <servlet-mapping>
         <servlet-name>initiatetransaction</servlet-name>
         <url-pattern>/initiatetransaction</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>test</servlet-name>
-        <url-pattern>/test</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>notify</servlet-name>
