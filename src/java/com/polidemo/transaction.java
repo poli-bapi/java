@@ -56,7 +56,7 @@ public class transaction extends HttpServlet {
             String sp = request.getServletContext().getInitParameter("servicepoint");
             policlient.MerchantAPIServiceStub stub = new policlient.MerchantAPIServiceStub(sp);
 
-            if (request.getParameter("tref") == null && request.getParameter("tref") == null) {
+            if (request.getParameter("tref") == null && request.getParameter("mref") == null) {
                 out.println("date requred");
                 out.close();
                 return;

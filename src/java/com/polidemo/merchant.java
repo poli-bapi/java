@@ -127,7 +127,7 @@ public class merchant extends HttpServlet {
                     for (int i = 0; i < dailyts.length; i++) {
 
                         out.println("<tr><td><a href=\"transaction?tref=" + dailyts[i].getTransactionRefNo() + "\">" + dailyts[i].getTransactionRefNo() + "</a></td>");
-                        out.println("<td><a href=\"transaction?mref=mref=" + dailyts[i].getMerchantReference() + "\">" + dailyts[i].getMerchantReference() + "</td>");
+                        out.println("<td><a href=\"transaction?mref=" + dailyts[i].getMerchantReference() + "\">" + dailyts[i].getMerchantReference() + "</td>");
 
 
                         out.println("<td>");
